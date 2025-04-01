@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хендмейд одяг</title>
+<!--  <link rel="stylesheet" href="assets/styles/style.css">-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<!-- header -->
+<header class="header">
+  <div class="logo-container">
+    <a class="logo" href="index.html"><i class="fa-solid fa-shirt"></i></a>
+  </div>
+  <nav class="nav">
+    <a class="nav-item" href="index.html">
+      <i class="fa-solid fa-house"></i>
+      <span class="tooltip">Головна</span>
+    </a>
+    <a class="nav-item" href="about.html">
+      <i class="fa-solid fa-info"></i>
+      <span class="tooltip">Про нас</span>
+    </a>
+    <a class="nav-item" href="partnership.html">
+      <i class="fa-regular fa-handshake"></i>
+      <span class="tooltip">Партнерство</span>
+    </a>
+    <a class="nav-item" href="custom.html">
+      <i class="fa-solid fa-scissors"></i>
+      <span class="tooltip">Особисте замовлення</span>
+    </a>
+    <a class="nav-item" href="profile.html">
+      <i class="fa-regular fa-user"></i>
+      <span class="tooltip">Профіль</span>
+    </a>
+  </nav>
+</header>
+
+<!-- Особистий кабінет -->
+<section class="profile-container">
+  <div class="profile-info">
+    <img src="https://placehold.co/100x100" alt="Аватар" class="profile-avatar">
+    <h3>Ім'я Користувача</h3>
+  </div>
+  <div class="cart-section">
+    <h2>Ваші товари</h2>
+    <ul class="cart-items">
+      <li><img src="https://placehold.co/50x50" alt="item"> Товар 1 - 500 грн</li>
+      <li><img src="https://placehold.co/50x50" alt="item"> Товар 2 - 750 грн</li>
+      <li><img src="https://placehold.co/50x50" alt="item"> Товар 3 - 1200 грн</li>
+    </ul>
+    <p><strong>Загальна сума: 2450 грн</strong></p>
+  </div>
+</section>
+
+<section class="order-form">
+  <h2>Оформлення замовлення</h2>
+  <form>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="first-name">Ім'я:</label>
+        <input type="text" id="first-name" name="first-name" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Прізвище:</label>
+        <input type="text" id="last-name" name="last-name" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Номер телефонa:</label>
+      <input type="text" id="phone" name="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="city">Місто:</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Адреса:</label>
+        <input type="text" id="address" name="address" required>
+      </div>
+    </div>
+    <button type="submit">Оформити замовлення</button>
+  </form>
+</section>
+<!--footer-->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Зв'яжіться з нами:</h3>
+      <p>Email: info@handmade-shop.com</p>
+      <p>Телефон: +380 123 456 789</p>
+    </div>
+    <div class="footer-column">
+      <h3>Ми в соціальних мережах:</h3>
+      <div class="socials">
+        <a class="social-link" href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a class="social-link" href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a class="social-link" href="#"><i class="fa-brands fa-telegram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
