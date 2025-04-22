@@ -10,11 +10,15 @@ body {
 a{
     text-decoration: none;
 }
+h1,h2,h3,h4{
+    text-transform: uppercase;
+}
 .header {
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -94,17 +98,92 @@ a{
     gap: 20px;
 }
 .reviews {
-    background: #f5f5f5;
-    padding: 50px 0;
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
 }
-.review {
-    margin: 20px auto;
-    max-width: 500px;
-    padding: 15px;
-    background: ghostwhite;
-    border-radius: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+.swiper-container {
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px 0;
 }
+
+.reviews {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+    transition: transform 0.5s ease;
+    margin: 0 10px;
+}
+.review-card {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f3f3f3;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.review-card button.delete-review {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.review-card button.delete-review:hover {
+    color: #d00;
+}
+
+/* Контейнер слайдера */
+.swiper-container {
+    width: 60%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px 0;
+    position: relative; /* Привязываем кнопки к контейнеру */
+    overflow: hidden;
+}
+
+/* Выравниваем слайды */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+
+}
+
+/* Кнопки навигации */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #333 !important;
+    transition: color 0.3s ease;
+    position: absolute;
+    z-index: 10;
+
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    --swiper-navigation-size: 20px;
+}
+
 .footer {
     background: #333;
     color: ghostwhite;
@@ -201,9 +280,19 @@ button:hover {
     color: #555;
     line-height: 1.6;
 }
+.catalog-section{
+    background-color: rgba(251, 235, 235, 0.35);
+    padding: 60px 20px;
+}
 .catalog {
     text-align: center;
     padding: 60px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(251, 235, 235, 0.35);
+}
+.create-item{
+    min-width: 400px;
 }
 .catalog h2 {
     margin-bottom: 20px;
@@ -226,6 +315,7 @@ button:hover {
 }
 .catalog-item img {
     max-width: 100%;
+    max-height: 100%;
     border-radius: 10px;
 }
 .catalog-item h3 {
@@ -298,4 +388,25 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.hidden-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.hidden-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }

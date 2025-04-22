@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Хендмейд одяг</title>
-<!--    <link rel="stylesheet" href="assets/styles/style.css">-->
+    <link rel="stylesheet" href="assets/styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
 </head>
 <body>
 <!-- header -->
@@ -45,8 +48,8 @@
 </section>
 
 <!-- about -->
-<section id="about" class="about">
-    <div class="about-content">
+<section class="about">
+    <div class="about-content hidden-left">
         <img src="https://placehold.co/600x400" alt="Про нас">
         <div>
             <h2>Про нас</h2>
@@ -56,29 +59,33 @@
 </section>
 
 <!-- catalog -->
-<section id="catalog" class="catalog">
-    <h2>Каталог товарів</h2>
+<section class="catalog-section">
+    <h2>Наші вироби</h2>
     <div class="catalog-items">
-        <div class="item"><img src="https://placehold.co/300" alt="В'язаний светр"><p>В'язаний светр</p></div>
-        <div class="item"><img src="https://placehold.co/300" alt="Шарф ручної роботи"><p>Шарф ручної роботи</p></div>
-        <div class="item"><img src="https://placehold.co/300" alt="Теплі рукавиці"><p>Теплі рукавиці</p></div>
+        <div class="item hidden"><img src="https://placehold.co/300" alt="В'язаний светр"><p>В'язаний светр</p></div>
+        <div class="item hidden"><img src="https://placehold.co/300" alt="Шарф ручної роботи"><p>Шарф ручної роботи</p></div>
+        <div class="item hidden"><img src="https://placehold.co/300" alt="Теплі рукавиці"><p>Теплі рукавиці</p></div>
     </div>
 </section>
 
 <!-- reviews-->
 <section class="reviews">
     <h2>Відгуки клієнтів</h2>
-    <div class="review">
-        <q>Зроблено круто класно</q>
-        <br><span>- Микола</span>
-    </div>
-    <div class="review">
-        <q>Дайте дві</q>
-        <br><span>- Панас</span>
-    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+<!--            <div class="review-card">-->
+<!--                <q>${review.text}</q>-->
+<!--                <h4>- ${review.name}</h4>-->
+<!--                <button class="delete-review" data-index="${index}">✖</button>-->
+<!--            </div>-->
+        </div>
 
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+    </div>
 </section>
-
 <!-- footer -->
 <footer class="footer">
     <div class="footer-content">
@@ -97,5 +104,8 @@
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
