@@ -1,30 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const hiddenElements = document.querySelectorAll(".hidden, .hidden-left, .hidden-right");
+    const hiddenElements = document.querySelectorAll(".hidden, .hidden-left, .hidden-right")
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target);
+                entry.target.classList.add("show")
+                observer.unobserve(entry.target)
             }
         });
-    }, { threshold: 0.2 });
-    hiddenElements.forEach(el => observer.observe(el));
+    }, { threshold: 0.2 })
+    hiddenElements.forEach(el => observer.observe(el))
 
-    const reviewWrapper = document.querySelector(".swiper-wrapper");
-    const form = document.getElementById("review-form");
+    const reviewWrapper = document.querySelector(".swiper-wrapper")
+    const form = document.getElementById("review-form")
 
     if (form) {
         form.addEventListener("submit", async (e) => {
-            e.preventDefault();
+            e.preventDefault()
 
-            const nameInput = document.getElementById("name");
-            const messageInput = document.getElementById("message");
+            const nameInput = document.getElementById("name")
+            const messageInput = document.getElementById("message")
 
             const name = nameInput.value.trim();
             const text = messageInput.value.trim();
 
             if (!name || !text) {
-                alert("Будь ласка, заповніть всі поля.");
+                alert("Будь ласка, заповніть всі поля.")
                 return;
             }
 
@@ -37,23 +37,23 @@ document.addEventListener("DOMContentLoaded", () => {
                     body: JSON.stringify({ name, text })
                 });
 
-                const result = await response.json();
+                const result = await response.json()
 
                 if (response.ok) {
-                    alert("Відгук збережено! Перейдіть на головну, щоб побачити.");
+                    alert("Відгук збережено! Перейдіть на головну, щоб побачити.")
                     nameInput.value = "";
                     messageInput.value = "";
                 } else {
-                    alert("Помилка: " + result.message);
+                    alert("Помилка: " + result.message)
                 }
             } catch (error) {
-                console.error("Помилка при відправці відгуку:", error);
-                alert("Щось пішло не так. Спробуйте пізніше.");
+                console.error("Помилка при відправці відгуку:", error)
+                alert("Щось пішло не так. Спробуйте пізніше.")
             }
         });
     }
 
-    const myCart = document.querySelector(".cart-items");
+    const myCart = document.querySelector(".cart-items")
 
     function parseJwt(token) {
         try {
@@ -64,10 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function loadCart() {
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("token")
         if (!token || !myCart) return;
 
-        const userId = parseJwt(token).id;
+        const userId = parseJwt(token).id
 
         try {
             const response = await fetch(`/api/cart/${userId}`, {
@@ -75,16 +75,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     Authorization: `Bearer ${token}`
                 }
             });
-            const cart = await response.json();
+            const cart = await response.json()
 
             myCart.innerHTML = ""; // очищаем перед отрисовкой
 
             let total = 0;
 
             cart.forEach((cartItem, index) => {
-                total += Number(cartItem.price);
-                const newCartItem = document.createElement("li");
-                newCartItem.classList.add("cart-item");
+                total += Number(cartItem.price)
+                const newCartItem = document.createElement("li")
+                newCartItem.classList.add("cart-item")
                 newCartItem.innerHTML = `
                     <img src="${cartItem.image_url}" width="50" height="50" alt="item image ${index}">
                     <span>${cartItem.name}</span>
@@ -93,19 +93,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 myCart.appendChild(newCartItem);
             });
 
-            const totalElement = document.querySelector(".cart-section p strong");
+            const totalElement = document.querySelector(".cart-section p strong")
             if (totalElement) {
                 totalElement.textContent = `Загальна сума: ${total} грн`;
             }
 
         } catch (err) {
-            console.error("Помилка при завантаженні кошика:", err);
+            console.error("Помилка при завантаженні кошика:", err)
         }
     }
 
-    loadCart();
+    loadCart()
 
-    const catalog = document.querySelector(".catalog-grid");
+    const catalog = document.querySelector(".catalog-grid")
 
     if (catalog) {
         catalog.addEventListener("click", async (e) => {
@@ -124,52 +124,51 @@ document.addEventListener("DOMContentLoaded", () => {
                         body: JSON.stringify({ userId, itemId })
                     });
 
-                    const result = await response.json();
+                    const result = await response.json()
                     if (response.ok) {
-                        alert("Товар додано до кошика.");
+                        alert("Товар додано до кошика.")
                     } else {
                         alert("Помилка: " + result.message);
                     }
                 } catch (error) {
-                    console.error("Помилка при додаванні до кошика:", error);
+                    console.error("Помилка при додаванні до кошика:", error)
                 }
             }
-        });
+        })
 
-        // Отрисовка товаров из базы данных
         fetch("/api/items")
             .then(res => res.json())
             .then(data => {
                 data.forEach((catalogItem, index) => {
-                    const newCatalogItem = document.createElement("div");
-                    newCatalogItem.classList.add("catalog-item");
+                    const newCatalogItem = document.createElement("div")
+                    newCatalogItem.classList.add("catalog-item")
                     newCatalogItem.innerHTML = `
                         <img src="${catalogItem.image_url}" width="300" height="300" alt="item image ${index}">
                         <h3>${catalogItem.name}</h3>
                         <p>Ціна: ${catalogItem.price} грн</p>
                         <button type="submit" class="buy-item" data-id="${catalogItem.itemid}">Додати в кошик</button>`;
-                    catalog.appendChild(newCatalogItem);
-                });
+                    catalog.appendChild(newCatalogItem)
+                })
             })
-            .catch(err => console.error("Помилка при завантаженні каталогу:", err));
+            .catch(err => console.error("Помилка при завантаженні каталогу:", err))
     }
 
-    const createItemForm = document.getElementById("create-item-form");
+    const createItemForm = document.getElementById("create-item-form")
 
     if (createItemForm) {
         createItemForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
+            e.preventDefault()
 
-            const itemNameInput = document.getElementById("item-name");
-            const itemPriceInput = document.getElementById("item-price");
-            const itemUrlInput = document.getElementById("item-url");
+            const itemNameInput = document.getElementById("item-name")
+            const itemPriceInput = document.getElementById("item-price")
+            const itemUrlInput = document.getElementById("item-url")
 
             const itemName = itemNameInput.value.trim();
             const itemPrice = itemPriceInput.value.trim();
             const itemUrl = itemUrlInput.value.trim();
 
             if (!itemName || !itemPrice || !itemUrl) {
-                alert("Поля не повинні бути пустими.");
+                alert("Поля не повинні бути пустими.")
                 return;
             }
 
@@ -198,8 +197,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     alert("Помилка: " + result.message);
                 }
             } catch (error) {
-                console.error("Помилка при відправці запиту:", error);
-                alert("Не вдалося додати товар. Спробуйте пізніше.");
+                console.error("Помилка при відправці запиту:", error)
+                alert("Не вдалося додати товар. Спробуйте пізніше.")
             }
         });
     }
@@ -227,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(reviews => {
                 reviews.forEach((review, index) => {
                     const slide = document.createElement("div");
-                    slide.classList.add("swiper-slide");
+                    slide.classList.add("swiper-slide")
                     slide.innerHTML = `
                 <div class="review-card">
                     <q>${review.text}</q>
@@ -235,17 +234,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button class="delete-review admin-only" data-id="${review.commentid}">✖</button>
                 </div>
             `;
-                    reviewWrapper.appendChild(slide);
+                    reviewWrapper.appendChild(slide)
                 });
 
-                swiper.update();
-                applyPermissions(); // 👉 показываем кнопки, если это админ
+                swiper.update()
+                applyPermissions()
             })
-            .catch(err => console.error("Помилка при завантаженні відгуків:", err));
+            .catch(err => console.error("Помилка при завантаженні відгуків:", err))
 
         document.addEventListener("click", async (e) => {
             if (e.target.classList.contains("delete-review")) {
-                const reviewId = e.target.dataset.id;
+                const reviewId = e.target.dataset.id
 
                 if (!confirm("Ви впевнені, що хочете видалити цей відгук?")) return;
 
@@ -257,11 +256,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     });
 
-                    const result = await response.json();
+                    const result = await response.json()
 
                     if (response.ok) {
-                        const reviewCard = e.target.closest(".swiper-slide");
-                        reviewCard.style.transition = "opacity 0.4s ease";
+                        const reviewCard = e.target.closest(".swiper-slide")
+                        reviewCard.style.transition = "opacity 0.4s ease"
                         reviewCard.style.opacity = "0";
 
                         setTimeout(() => {
@@ -269,11 +268,11 @@ document.addEventListener("DOMContentLoaded", () => {
                             swiper.update();
                         }, 400);
                     } else {
-                        alert("Помилка: " + result.message);
+                        alert("Помилка: " + result.message)
                     }
                 } catch (err) {
-                    console.error("Помилка при видаленні відгуку:", err);
-                    alert("Не вдалося видалити відгук.");
+                    console.error("Помилка при видаленні відгуку:", err)
+                    alert("Не вдалося видалити відгук.")
                 }
             }
         });

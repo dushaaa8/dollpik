@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-// Добавление товара в корзину
 router.post('/add', async (req, res) => {
     const { userId, itemId } = req.body;
     if (!userId || !itemId) {
@@ -10,7 +9,7 @@ router.post('/add', async (req, res) => {
     }
 
     try {
-        // Проверка: если товар уже есть — увеличиваем количество
+
         const [existing] = await db.query(
             'SELECT * FROM cart_items WHERE user_id = ? AND item_id = ?',
             [userId, itemId]
@@ -35,7 +34,6 @@ router.post('/add', async (req, res) => {
     }
 });
 
-// Получение всех товаров в корзине пользователя
 router.get('/:userId', async (req, res) => {
     const userId = req.params.userId;
 
