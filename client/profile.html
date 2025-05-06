@@ -31,10 +31,17 @@
       <i class="fa-solid fa-scissors"></i>
       <span class="tooltip">Особисте замовлення</span>
     </a>
-    <a class="nav-item" href="profile.html">
-      <i class="fa-regular fa-user"></i>
-      <span class="tooltip">Профіль</span>
-    </a>
+    <a class="nav-item auth" style="display: none" href="profile.html"><i class="fa-regular fa-user"></i><span class="tooltip">Профіль</span></a>
+
+    <div class="nav-item auth-buttons">
+      <a href="/login">Увійти</a>
+      <a href="/register">Зареєструватися</a>
+    </div>
+
+    <div id="user-info" style="display: none;">
+      <span id="welcome-user"></span>
+      <button id="logout-btn">Вийти</button>
+    </div>
   </nav>
 </header>
 
@@ -42,7 +49,7 @@
 <section class="profile-container">
     <div class="profile-info">
       <img src="https://placehold.co/100x100" alt="Аватар" class="profile-avatar">
-      <h3>Ім'я Користувача</h3>
+      <h3 id="username">Ім'я Користувача</h3>
       <section class="contact-form hidden-left">
         <h2>Залиште відгук</h2>
         <form id ="review-form">
@@ -118,5 +125,6 @@
   </div>
 </footer>
 <script src="script.js"></script>
+<script src="auth-check.js"></script>
 </body>
 </html>

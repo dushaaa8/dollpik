@@ -31,16 +31,23 @@
       <i class="fa-solid fa-scissors"></i>
       <span class="tooltip">Особисте замовлення</span>
     </a>
-    <a class="nav-item" href="profile.html">
-      <i class="fa-regular fa-user"></i>
-      <span class="tooltip">Профіль</span>
-    </a>
+    <a class="nav-item auth" style="display: none" href="profile.html"><i class="fa-regular fa-user"></i><span class="tooltip">Профіль</span></a>
+
+    <div class="nav-item auth-buttons">
+      <a href="/login">Увійти</a>
+      <a href="/register">Зареєструватися</a>
+    </div>
+
+    <div id="user-info" style="display: none;">
+      <span id="welcome-user"></span>
+      <button id="logout-btn">Вийти</button>
+    </div>
   </nav>
 </header>
 
 <section class="catalog">
 
-  <aside class="create-item">
+  <aside class="create-item admin-only">
     <section class="contact-form">
       <h2>Створити айтем</h2>
       <form id="create-item-form">
@@ -89,5 +96,6 @@
   </div>
 </footer>
 <script src="script.js"></script>
+<script src="auth-check.js"></script>
 </body>
 </html>

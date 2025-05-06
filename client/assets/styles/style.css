@@ -72,7 +72,7 @@ h1,h2,h3,h4{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('https://placehold.co/1920x800') no-repeat center/cover;
+    background: url('https://prjaga.com/images/uzory/u1052a2.jpg') no-repeat center/cover;
     color: ghostwhite;
     padding: 20px;
 }
@@ -80,8 +80,8 @@ h1,h2,h3,h4{
     display: inline-block;
     padding: 10px 20px;
     background: transparent;
-    border: 3px solid #bc672a;
-    color: #bc672a;
+    border: 3px solid #292828;
+    color: #322f33;
     text-transform: uppercase;
     margin-top: 20px;
 }
@@ -252,6 +252,7 @@ h1,h2,h3,h4{
     resize: none;
 }
 button {
+    text-align: center;
     margin-top: 15px;
     background: #333;
     color: white;
@@ -409,4 +410,15 @@ button:hover {
 .show {
     opacity: 1;
     transform: translateY(0);
+}
+.admin-only{
+    display: none;
+}
+#user-info{
+    align-items: baseline;
+    top:0;
+    padding-left: 300px;
+}
+#logout-btn{
+    margin-left: 15px;
 }

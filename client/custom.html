@@ -31,19 +31,26 @@
       <i class="fa-solid fa-scissors"></i>
       <span class="tooltip">Особисте замовлення</span>
     </a>
-    <a class="nav-item" href="profile.html">
-      <i class="fa-regular fa-user"></i>
-      <span class="tooltip">Профіль</span>
-    </a>
+    <a class="nav-item auth" style="display: none" href="profile.html"><i class="fa-regular fa-user"></i><span class="tooltip">Профіль</span></a>
+
+    <div class="nav-item auth-buttons">
+      <a href="/login">Увійти</a>
+      <a href="/register">Зареєструватися</a>
+    </div>
+
+    <div id="user-info" style="display: none;">
+      <span id="welcome-user"></span>
+      <button id="logout-btn">Вийти</button>
+    </div>
   </nav>
 </header>
 
 <section class="slider-section">
   <h2>Приклад виконаних замовлень</h2>
   <div class="slider">
-    <img src="https://placehold.co/600x400" alt="Робота 1">
-    <img src="https://placehold.co/600x400" alt="Робота 2">
-    <img src="https://placehold.co/600x400" alt="Робота 3">
+    <img width="300" height="400" src="https://www.subdued.com/media/catalog/product/b/o/bo04999col01r-1.jpg?optimize=high&fit=bounds&height=&width=&canvas=:" alt="Робота 1">
+    <img width="300" height="400" src="https://weareknitters.com/cdn/shop/files/knitting-kit-petite-wool-banksia-sweater_EN01.jpg?v=1705333476" alt="Робота 2">
+    <img width="300" height="400" src="https://www.handylittleme.com/wp-content/uploads/ribbed-beanie.jpg" alt="Робота 3">
   </div>
 </section>
 <section class="text-section hidden-left">
@@ -89,5 +96,6 @@
   </div>
 </footer>
 <script src="script.js"></script>
+<script src="auth-check.js"></script>
 </body>
 </html>
