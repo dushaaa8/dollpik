@@ -18,7 +18,7 @@ h1,h2,h3,h4{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -421,4 +421,19 @@ button:hover {
 }
 #logout-btn{
     margin-left: 15px;
+}
+.parallax{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+.parallax::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
 }
