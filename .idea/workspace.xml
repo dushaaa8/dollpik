@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbf87b7a-da69-4cec-b338-c04de93e088d" name="Changes" comment="full back-end added // cleared">
+    <list default="true" id="bbf87b7a-da69-4cec-b338-c04de93e088d" name="Changes" comment="parallax effect">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/assets/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
@@ -111,7 +111,9 @@
       <workItem from="1746450215390" duration="8942000" />
       <workItem from="1746469910826" duration="3682000" />
       <workItem from="1746531149013" duration="10698000" />
-      <workItem from="1746601654566" duration="711000" />
+      <workItem from="1746601654566" duration="931000" />
+      <workItem from="1746972403126" duration="8652000" />
+      <workItem from="1747164750177" duration="1139000" />
     </task>
     <task id="LOCAL-00001" summary="for lab 4">
       <option name="closed" value="true" />
@@ -145,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746569725798</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="parallax effect">
+      <option name="closed" value="true" />
+      <created>1746602434147</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746602434147</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +176,7 @@
     <MESSAGE value="for lab 4" />
     <MESSAGE value="full back-end added" />
     <MESSAGE value="full back-end added // cleared" />
-    <option name="LAST_COMMIT_MESSAGE" value="full back-end added // cleared" />
+    <MESSAGE value="parallax effect" />
+    <option name="LAST_COMMIT_MESSAGE" value="parallax effect" />
   </component>
 </project>
