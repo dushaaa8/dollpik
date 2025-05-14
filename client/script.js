@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+    burger.addEventListener('click', () => {
+        menu.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-menu li a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('open');
+        });
+    });
     const hiddenElements = document.querySelectorAll(".hidden, .hidden-left, .hidden-right")
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {

@@ -41,7 +41,7 @@ h1,h2,h3,h4{
     justify-content: center;
     flex-grow: 1;
     position: absolute;
-    left: 38%;
+    left: 30%;
 }
 .nav-item {
     color: #333333;
@@ -151,17 +151,17 @@ h1,h2,h3,h4{
     color: #d00;
 }
 
-/* Контейнер слайдера */
+
 .swiper-container {
     width: 60%;
     max-width: 600px;
     margin: auto;
     padding: 20px 0;
-    position: relative; /* Привязываем кнопки к контейнеру */
+    position: relative;
     overflow: hidden;
 }
 
-/* Выравниваем слайды */
+
 .swiper-slide {
     display: flex;
     justify-content: center;
@@ -170,7 +170,6 @@ h1,h2,h3,h4{
 
 }
 
-/* Кнопки навигации */
 .swiper-button-prev,
 .swiper-button-next {
     color: #333 !important;
@@ -417,7 +416,6 @@ button:hover {
 #user-info{
     align-items: baseline;
     top:0;
-    padding-left: 300px;
 }
 #logout-btn{
     margin-left: 15px;
@@ -438,6 +436,36 @@ button:hover {
     z-index: -1;
 }
 
+.burger-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.mobile-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.mobile-menu li {
+    margin-right: 50px;
+}
+.mobile-menu li:last-child {
+    padding-left: 100px;
+}
+.mobile-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #333; text-decoration: none;
+}
+.mobile-menu li a i {
+    margin-right: 8px;
+}
+
+
 @media (max-width: 768px) {
 
     .hero {
@@ -446,12 +474,115 @@ button:hover {
         padding: 60px 20px;
     }
 
-    .nav {
-        display: flex;
-        gap: 20px;
-        left: 10%;
-        align-items: center;
+    .header {
+        justify-content: center;
+        padding: 20px 0;
     }
+
+    .logo-container {
+        position: absolute;
+        left: 20px;
+    }
+
+    .burger-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 26px;
+        z-index: 5;
+    }
+
+    .nav {
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 0;
+    }
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 4;
+        padding: 10px 0;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+    }
+
+    .mobile-menu li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu li a,
+    .mobile-menu li .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 0;
+        width: 100%;
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        background-color: white;
+        gap: 6px;
+    }
+
+    .mobile-menu li a:hover {
+        background-color: #f6f6f6;
+    }
+
+    .mobile-menu li i {
+        font-size: 18px;
+        color: #333;
+    }
+
+    .tooltip {
+        display: inline;
+        position: static;
+        background: none;
+        color: inherit;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .auth-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 0;
+    }
+
+    .auth-buttons a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .auth-buttons a:hover {
+        text-decoration: underline;
+    }
+
+    #user-info {
+        text-align: center;
+        padding-left: 60px;
+    }
+
 
     .about-content img,
     .catalog-items img {
@@ -484,31 +615,5 @@ button:hover {
     }
     .cart-items li{
         gap: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .hero {
-        padding: 40px 15px;
-    }
-
-
-    .nav-item {
-        font-size: 16px;
-    }
-
-
-    .about-content,
-    .catalog-items {
-        padding: 5px;
-    }
-
-    footer {
-        font-size: 14px;
-    }
-    .social-icons img {
-        width: 24px;
-        margin: 0 5px;
     }
 }
