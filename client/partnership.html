@@ -14,34 +14,26 @@
   <div class="logo-container">
     <a class="logo" href="index.html"><i class="fa-solid fa-shirt"></i></a>
   </div>
-  <nav class="nav">
-    <a class="nav-item" href="index.html">
-      <i class="fa-solid fa-house"></i>
-      <span class="tooltip">Головна</span>
-    </a>
-    <a class="nav-item" href="about.html">
-      <i class="fa-solid fa-info"></i>
-      <span class="tooltip">Про нас</span>
-    </a>
-    <a class="nav-item" href="partnership.html">
-      <i class="fa-regular fa-handshake"></i>
-      <span class="tooltip">Партнерство</span>
-    </a>
-    <a class="nav-item" href="custom.html">
-      <i class="fa-solid fa-scissors"></i>
-      <span class="tooltip">Особисте замовлення</span>
-    </a>
-    <a class="nav-item auth" style="display: none" href="profile.html"><i class="fa-regular fa-user"></i><span class="tooltip">Профіль</span></a>
 
-    <div class="nav-item auth-buttons">
-      <a href="/login">Увійти</a>
-      <a href="/register">Зареєструватися</a>
-    </div>
+  <nav class="nav mobile-nav">
+    <div id="burger" class="burger-icon"><i class="fa fa-bars"></i></div>
+    <ul id="menu" class="mobile-menu">
+      <li><a class="nav-item" href="index.html"><i class="fa-solid fa-house"></i><span class="tooltip">Головна</span></a></li>
+      <li><a class="nav-item" href="about.html"><i class="fa-solid fa-info"></i><span class="tooltip">Про нас</span></a></li>
+      <li><a class="nav-item" href="partnership.html"><i class="fa-regular fa-handshake"></i><span class="tooltip">Партнерство</span></a></li>
+      <li><a class="nav-item" href="custom.html"><i class="fa-solid fa-scissors"></i><span class="tooltip">Особисте замовлення</span></a></li>
+      <li><a class="nav-item auth" style="display: none" href="profile.html"><i class="fa-regular fa-user"></i><span class="tooltip">Профіль</span></a></li>
 
-    <div id="user-info" style="display: none;">
-      <span id="welcome-user"></span>
-      <button id="logout-btn">Вийти</button>
-    </div>
+      <li> <div class="nav-item auth-buttons">
+        <a href="/login">Увійти</a>
+        <a href="/register">Зареєструватися</a>
+      </div></li>
+
+      <li><div id="user-info" style="display: none;">
+        <span id="welcome-user"></span>
+        <button id="logout-btn">Вийти</button>
+      </div></li>
+    </ul>
   </nav>
 </header>
 

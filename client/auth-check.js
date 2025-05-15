@@ -3,7 +3,8 @@ window.applyPermissions = function () {
 
     if (permission === "admin") {
         document.querySelectorAll(".admin-only").forEach(el => {
-            el.style.display = "inline-block"
+            el.style.visibility = "visible"
+            el.style.opacity = "1"
         });
     }
 
