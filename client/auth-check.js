@@ -3,8 +3,7 @@ window.applyPermissions = function () {
 
     if (permission === "admin") {
         document.querySelectorAll(".admin-only").forEach(el => {
-            el.style.visibility = "visible"
-            el.style.opacity = "1"
+            el.style.display = "flex"
         });
     }
 
